@@ -156,6 +156,8 @@
     <ClInclude Include="src\comparator\Comparator.h" />
     <ClInclude Include="src\comparator\ComparatorCommons.h" />
     <ClInclude Include="src\tests\TestExample.h" />
+    <ClInclude Include="src\tests\TestStdMove.h" />
+    <ClInclude Include="src\tests\TestStdMoveSupport.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/PerformanceTester.cpp" />
@@ -167,6 +169,8 @@
     </ClCompile>
     <ClCompile Include="src\comparator\Comparator.cpp" />
     <ClCompile Include="src\tests\TestExample.cpp" />
+    <ClCompile Include="src\tests\TestStdMove.cpp" />
+    <ClCompile Include="src\tests\TestStdMoveSupport.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

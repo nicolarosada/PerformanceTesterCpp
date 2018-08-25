@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+#include <algorithm>
 #include <iostream>
 
 #include "Comparator.h"
@@ -8,6 +9,11 @@
 void
 Comparator::compare()
 {
+  /// First run to be discarded.
+  runSimulation<A>();
+  runSimulation<B>();
+
+  /// Run 
   runSimulation<A>();
   runSimulation<B>();
 }
@@ -15,9 +21,16 @@ Comparator::compare()
 void
 Comparator::printResults() const
 {
+  /// Time
   std::cout << std::endl;
   std::cout << "Simulation A: " << getDuration<A>() << " milliseconds" << std::endl;
   std::cout << "Simulation B: " << getDuration<B>() << " milliseconds" << std::endl;
+
+  /// %
+  float percent = (float) (getDuration<A>() - getDuration<B>());
+  percent = std::abs(percent) / std::min(getDuration<A>(), getDuration<B>());
+  percent *= 100;
+  std::cout << "Percent: +" << std::round(percent) << " %" << std::endl;
 }
 
 /// Private
